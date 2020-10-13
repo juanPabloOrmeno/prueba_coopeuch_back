@@ -1,0 +1,39 @@
+{
+  "name": "sex-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc -w | node dist",
+    "dev": "tsc -w | nodemon dist",
+    "prod": "tsc | node dist"
+  },
+  "author": "juan",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.7-alpha.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.15",
+    "tsc": "^1.20150623.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.7.21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanPabloOrmeno/sex.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/juanPabloOrmeno/sex/issues"
+  },
+  "homepage": "https://github.com/juanPabloOrmeno/sex#readme",
+  "description": ""
+}
