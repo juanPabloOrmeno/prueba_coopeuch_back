@@ -9,20 +9,14 @@
 ## instalar los paquetes de package.json 
 - npm install
 
+## es necesario tener una base de datos mongoDb en el puerto 27017
 
-## correr docker con docker-compose (Puerto expuesto 5000)
-- docker-compose build
-- docker-compose up -d
-
-
-
-## url servicio en Heroku
-https://bice-backent-prueba.herokuapp.com/swagger/
+## correr de forma local
+- npm start
 
 
-## url swagger del servicio en Heroku
-https://bice-backent-prueba.herokuapp.com/swagger/
-
+## url swagger
+http://localhost:5000/swagger/
 
 
 
