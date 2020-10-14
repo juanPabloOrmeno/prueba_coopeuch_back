@@ -15,25 +15,13 @@
       "variables": {
         "protocol": {
           "enum": [
-            "http",
-            "https"
+            "http"
           ],
           "default": "http"
         }
       }
-    },
-    {
-      "url": "{protocol}://bice-backent-prueba.herokuapp.com/",
-      "variables": {
-        "protocol": {
-          "enum": [
-            "http",
-            "https"
-          ],
-          "default": "https"
-        }
-      }
     }
+    
   ],
   "components": {
     "schemas": {
