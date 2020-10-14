@@ -24,7 +24,7 @@ tareaRouters.get('/', async (req: any, res: Response) => {
 
 
 //crear usuario
-tareaRouters.post('/', async (req: Request, res: Response) => {
+tareaRouters.post('/create', async (req: Request, res: Response) => {
 
     try {
         const tarea = {
@@ -46,7 +46,7 @@ tareaRouters.post('/', async (req: Request, res: Response) => {
 
 
 // Actualizar usuario
-tareaRouters.put('/', async (req: any, res: Response) => {
+tareaRouters.put('/update', async (req: any, res: Response) => {
 
     try {
         const tarea = {
@@ -81,13 +81,11 @@ tareaRouters.put('/', async (req: any, res: Response) => {
 
 
 //borrar tarea
-tareaRouters.delete('/', async (req: any, res: Response) => {
+tareaRouters.post('/delete', async (req: any, res: Response) => {
 
     try {
         const tarea = {
             id: req.body.id,
-            descripcion: req.body.descripcion,
-            vigente: req.body.vigente
         }
 
         const userDB = await Tarea.findOneAndDelete(tarea.id);

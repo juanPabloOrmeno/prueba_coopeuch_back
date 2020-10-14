@@ -1,5 +1,5 @@
 {
-  "name": "sex-server",
+  "name": "coopeuch-server",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "express-fileupload": "^1.1.7-alpha.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.15",
+    "swagger-ui-express": "^4.1.4",
     "tsc": "^1.20150623.0"
   },
   "devDependencies": {
@@ -24,16 +25,17 @@
     "@types/cors": "^2.8.6",
     "@types/express": "^4.17.6",
     "@types/jsonwebtoken": "^8.5.0",
-    "@types/mongoose": "^5.7.21"
+    "@types/mongoose": "^5.7.21",
+    "@types/swagger-ui-express": "^3.0.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juanPabloOrmeno/sex.git"
+    "url": "git+https://github.com/juanPabloOrmeno/prueba_coopeuch_back"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/juanPabloOrmeno/sex/issues"
+    "url": "https://github.com/juanPabloOrmeno/prueba_coopeuch_back"
   },
-  "homepage": "https://github.com/juanPabloOrmeno/sex#readme",
+  "homepage": "https://github.com/juanPabloOrmeno/prueba_coopeuch_back#readme",
   "description": ""
 }

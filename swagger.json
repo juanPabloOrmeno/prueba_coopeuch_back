@@ -1,0 +1,290 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Coopeuch",
+    "description": "microservicio de tareas",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "{protocol}://localhost:5000/tareas/",
+      "variables": {
+        "protocol": {
+          "enum": [
+            "http",
+            "https"
+          ],
+          "default": "http"
+        }
+      }
+    },
+    {
+      "url": "{protocol}://bice-backent-prueba.herokuapp.com/",
+      "variables": {
+        "protocol": {
+          "enum": [
+            "http",
+            "https"
+          ],
+          "default": "https"
+        }
+      }
+    }
+  ],
+  "components": {
+    "schemas": {
+      "ResponseTarea": {
+        "type": "object",
+        "required": [
+          "ok"
+        ],
+        "properties": {
+          "status": {
+            "type": "boolean"
+          },
+          "response": {
+            "type": "object",
+            "properties": {
+              "vigente": {
+                "type": "boolean"
+              },
+              "_id": {
+                "type": "string"
+              },
+              "descripcion": {
+                "type": "string"
+              },
+              "fecha": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "ResponseUserDb": {
+        "type": "object",
+        "required": [
+          "ok"
+        ],
+        "properties": {
+          "userDB": {
+            "type": "object",
+            "properties": {
+              "vigente": {
+                "type": "boolean"
+              },
+              "_id": {
+                "type": "string"
+              },
+              "descripcion": {
+                "type": "string"
+              },
+              "fecha": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "ResponseDelete": {
+        "type": "object",
+        "required": [
+          "ok"
+        ],
+        "properties": {
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "boolean"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Tareas"
+        ],
+        "summary": "ver tareas",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseTarea"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "NOK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/create/": {
+      "post": {
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "descripcion": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tareas"
+        ],
+        "summary": "crear tarea",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseUserDb"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "NOK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update/": {
+      "put": {
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tipo": {
+                    "type": "string"
+                  },
+                  "fecha": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tareas"
+        ],
+        "summary": "actualizar tarea",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseUserDb"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "NOK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete/": {
+      "post": {
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Tareas"
+        ],
+        "summary": "elimina tarea",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResponseDelete"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "NOK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

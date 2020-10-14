@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-  sex:
-    container_name: copeuch-back
+  copeuch:
+    container_name: coopeuch-back
     build: .
     ports: 
       - "3000:3000"
     networks: 
-      - net-copeuch
+      - net-coopeuch
 networks: 
     net-copeuch:
   

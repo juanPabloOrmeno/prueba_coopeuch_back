@@ -11,7 +11,7 @@ export const connectMongo = async (  ) => {
         useCreateIndex: true
     };
     try{
-        await mongoose.connect("mongodb://"+mongo+"/sex",config);
+        await mongoose.connect("mongodb://"+mongo+"/tareas",config);
         console.log('Base de datos conectada correctamente');
     }catch(e){
         setTimeout(()=>{

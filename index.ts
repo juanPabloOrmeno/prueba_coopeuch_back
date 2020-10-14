@@ -17,7 +17,7 @@ server.app.use( bodyParser.urlencoded({ extended: true }));
 server.app.use( bodyParser.json());
 
 //rutas
-server.app.use( '/user', userRouters);
+server.app.use( '/tareas', userRouters);
 
 
 //conectar bd
