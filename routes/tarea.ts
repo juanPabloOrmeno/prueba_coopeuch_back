@@ -58,14 +58,14 @@ tareaRouters.put('/update', async (req: any, res: Response) => {
 
         console.log(tarea)
 
-        const userDB = await Tarea.findByIdAndUpdate(tarea.id, tarea, { new: true });
+        const userDB = await Tarea.findOneAndUpdate(tarea.id, tarea, { new: false });
         if (!userDB) {
             res.json({
                 ok: false,
                 mensaje: 'No existe un usuario con ese ID'
             })
         } else {
-            const userDB = await Tarea.create(tarea);
+         
             res.status(200).send({
                 userDB
             });
@@ -88,7 +88,9 @@ tareaRouters.post('/delete', async (req: any, res: Response) => {
             id: req.body.id,
         }
 
-        const userDB = await Tarea.findOneAndDelete(tarea.id);
+        console.log(tarea)
+
+        const userDB = await Tarea.findByIdAndDelete(tarea.id);
         if (userDB === null)
             res.status(200).json({
                 status: 'tarea no esta en base de datos',
